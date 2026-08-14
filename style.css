@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #64183d,
+            transparent 40%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            #40132d,
+            transparent 40%
+        ),
+
+        #10070d;
+
+    overflow-x: hidden;
+}
+
+
+/* Main container */
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+}
+
+
+/* Glass card */
+
+.screen {
+    width: 100%;
+    max-width: 520px;
+
+    text-align: center;
+
+    padding: 45px 25px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.5);
+
+    animation: fadeIn 1.2s ease;
+}
+
+
+/* Opening heart */
+
+.heart {
+    font-size: 65px;
+
+    animation: heartbeat 1.2s infinite;
+
+    margin-bottom: 15px;
+}
+
+
+/* Text */
+
+.small-text {
+    font-size: 17px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.85;
+
+    margin-bottom: 10px;
+}
+
+
+h1 {
+    font-size: clamp(45px, 12vw, 70px);
+
+    color: #ffd7e7;
+
+    text-shadow:
+        0 0 20px #ff4d91,
+        0 0 40px rgba(255, 77, 145, 0.4);
+
+    margin-bottom: 5px;
+}
+
+
+h2 {
+    color: #ffc6dc;
+
+    margin-bottom: 20px;
+}
+
+
+.birthday-date {
+    opacity: 0.8;
+
+    margin: 20px 0 30px;
+
+    letter-spacing: 1px;
+}
+
+
+/* Button */
+
+button {
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f91,
+            #ff76aa
+        );
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(255, 79, 145, 0.35);
+
+    transition: 0.3s;
+}
+
+
+button:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 15px 35px rgba(255, 79, 145, 0.5);
+}
+
+
+/* Birthday */
+
+.hidden {
+    display: none;
+}
+
+
+.cake {
+    font-size: 60px;
+
+    margin-bottom: 10px;
+
+    animation: floating 2s infinite ease-in-out;
+}
+
+
+.birthday-title {
+    font-size: clamp(38px, 10vw, 62px);
+}
+
+
+.name {
+    font-size: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+/* Photo */
+
+.photo-container {
+    width: 280px;
+    height: 280px;
+
+    margin: 0 auto 30px;
+
+    border-radius: 50%;
+
+    padding: 5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff6fa8,
+            #ffd3e4
+        );
+
+    box-shadow:
+        0 0 45px rgba(255, 86, 150, 0.45);
+}
+
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+
+/* Message */
+
+.message {
+    text-align: left;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(0, 0, 0, 0.18);
+}
+
+
+.message p {
+    margin-bottom: 18px;
+}
+
+
+.highlight {
+    color: #ffc4da;
+
+    font-weight: bold;
+}
+
+
+/* Final love */
+
+.love {
+    margin-top: 25px;
+
+    font-size: 19px;
+
+    color: #ffd0e1;
+
+    line-height: 1.7;
+}
+
+
+.love span {
+    font-size: 16px;
+
+    opacity: 0.9;
+}
+
+
+/* Floating hearts */
+
+.hearts span {
+    position: fixed;
+
+    bottom: -30px;
+
+    pointer-events: none;
+
+    animation:
+        floatUp 6s linear forwards;
+}
+
+
+/* Confetti */
+
+#confetti {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+
+/* Animations */
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes floatUp {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0.8;
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    .container {
+        padding: 15px;
+    }
+
+    .screen {
+        padding: 35px 18px;
+    }
+
+    .photo-container {
+        width: 240px;
+        height: 240px;
+    }
+
+    .message {
+        font-size: 15px;
+
+        padding: 20px;
+    }
+
+}
